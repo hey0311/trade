@@ -13,9 +13,7 @@ def plot_minute_kline(dfcvs):
     #这样就可以一分钟就占一个位置
     dfcvs['时间']=dfcvs['时间'].apply(lambda x:dates.date2num(x)*1440)
     data_mat=dfcvs.values
-
     fig,ax=plt.subplots(figsize=(15,5))
-
     fig.subplots_adjust(bottom=0.1)
     mpf.candlestick_ohlc(ax,data_mat,colordown='r', colorup='g',width=0.5,alpha=1)
     #将x轴的浮点数格式化成日期小时分钟
@@ -30,12 +28,9 @@ def plot_minute_kline(dfcvs):
             'Return the label for time x at position pos'
             ind = int(np.round(x))
             #ind就是x轴的刻度数值，不是日期的下标
-
             return dates.num2date( ind/1440).strftime(self.fmt)
-
     formatter = MyFormatter(data_mat[:,0])
     ax.xaxis.set_major_formatter(formatter)
-
     for label in ax.get_xticklabels():
         label.set_rotation(30)
         label.set_horizontalalignment('right')
