@@ -21,4 +21,5 @@ df_1 = df[['time', 'open', 'high', 'low', 'close']]
 # for p in acc.plots:
 #     plot_minute_kline(df_1.loc[p[0]:p[1]])
 plot_minute_kline(df_1.loc[acc.plots[0][0]:acc.plots[0][1]])
+
 print(acc.blance)
