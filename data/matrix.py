@@ -21,7 +21,6 @@ startDate = datetime.datetime(2014, 8, 6, 0, 0, 0, 0)
 # startDate = datetime.datetime(2019, 5, 13, 16, 0, 0, 0)
 endDate = startDate + datetime.timedelta(days=480)
 stopDate = datetime.datetime(2019, 5, 15, 23, 0, 0, 946118)
-
 while startDate < stopDate:
     requireStr = "https://api.matrixdata.io/matrixdata/api/v1/barchart?symbol=" + symbol + "/USD.OK.Q&interval=" + interval + "&start=" + startDate.strftime(
         "%Y-%m-%d %H:%S:%M") + "&end=" + endDate.strftime("%Y-%m-%d %H:%S:%M") + "&limit=500"
